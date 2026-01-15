@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 20px;
+    background-color: #f1f1f1;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 20px;
+}
+
+.left-column {
+    flex: 30%;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* Cột bên phải (Nội dung chính) - 70% */
+.right-column {
+    flex: 70%;
+    padding-left: 20px;
+}
+
+/* Tạo các khung xám giả định làm hình ảnh */
+.fake-img {
+    background-color: #aaa;
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    border: 1px solid #888;
+}
+
+/* Responsive: Trên màn hình nhỏ, 2 cột sẽ xếp chồng lên nhau */
+@media screen and (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        flex: 100%;
+        padding: 0;
+        border-right: none;
+    }
+}
