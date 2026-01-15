@@ -1,86 +1,54 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 40px 20px;
-    background-color: #1a1a1a; /* Nền tối sang trọng */
-    color: #f5f5f5;
+    margin: 20px;
+    background-color: #f1f1f1;
 }
 
+/* Container chứa cả 2 cột */
 .container {
     display: flex;
     flex-wrap: wrap;
-    background-color: #262626; /* Nền xám than cho khung chính */
-    padding: 30px;
-    max-width: 1100px;
-    margin: auto;
-    border-radius: 8px;
-    border-left: 5px solid #e53935; /* Thanh nhấn màu đỏ đặc trưng của ngành ô tô */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    background-color: white;
+    padding: 20px;
 }
 
+/* Cột bên trái (Sidebar) - 30% */
 .left-column {
     flex: 30%;
-    padding-right: 30px;
-    border-right: 1px solid #444;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
 }
 
-.left-column h3 {
-    color: #e53935;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid #444;
-    padding-bottom: 10px;
-}
-
+/* Cột bên phải (Nội dung chính) - 70% */
 .right-column {
     flex: 70%;
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
-.right-column h2 {
-    color: #ffffff;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.right-column h5 {
-    color: #999;
-    margin-top: 0;
-}
-
-/* Các khung ảnh mô phỏng linh kiện */
+/* Tạo các khung xám giả định làm hình ảnh */
 .fake-img {
-    background: linear-gradient(135deg, #333, #555); /* Màu xám kim loại */
+    background-color: #aaa;
     width: 100%;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #eee;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #666;
-    transition: 0.3s;
+    color: #444;
+    border: 1px solid #888;
 }
 
-.fake-img:hover {
-    border-color: #e53935;
-    background: #444;
-    cursor: pointer;
-}
-
-p {
-    line-height: 1.7;
-    color: #ccc;
-}
-
-/* Mobile responsive */
-@media screen and (max-width: 800px) {
-    .container { flex-direction: column; }
-    .left-column, .right-column { flex: 100%; padding: 0; border: none; }
-    .left-column { margin-bottom: 30px; }
+/* Responsive: Trên màn hình nhỏ, 2 cột sẽ xếp chồng lên nhau */
+@media screen and (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        flex: 100%;
+        padding: 0;
+        border-right: none;
+    }
 }
