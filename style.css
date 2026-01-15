@@ -1,52 +1,90 @@
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    margin: 20px;
-    background-color: #f1f1f1;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    padding: 20px;
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .left-column {
     flex: 30%;
-    padding-right: 20px;
-    border-right: 1px solid #ddd;
+    padding-right: 30px;
+    border-right: 2px solid #f0f2f5;
 }
 
-/* Cột bên phải (Nội dung chính) - 70% */
+.left-column h3 {
+    color: #1a73e8;
+    border-left: 4px solid #1a73e8;
+    padding-left: 10px;
+}
+
 .right-column {
     flex: 70%;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
-/* Tạo các khung xám giả định làm hình ảnh */
+.right-column h2 {
+    color: #202124;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.right-column h5 {
+    color: #70757a; 
+    font-weight: normal;
+    margin-top: 0;
+}
+
 .fake-img {
-    background-color: #aaa;
+    background: linear-gradient(135deg, #e0e0e0, #cfd8dc); 
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #444;
-    border: 1px solid #888;
+    color: #5f6368;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.3s ease; 
 }
 
-/* Responsive: Trên màn hình nhỏ, 2 cột sẽ xếp chồng lên nhau */
-@media screen and (max-width: 700px) {
+.fake-img:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #d1d1d1, #b0bec5);
+}
+
+p {
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+@media screen and (max-width: 800px) {
     .container {
         flex-direction: column;
+        padding: 20px;
     }
-    .left-column, .right-column {
-        flex: 100%;
-        padding: 0;
+    .left-column {
+        padding-right: 0;
         border-right: none;
+        border-bottom: 2px solid #f0f2f5;
+        margin-bottom: 20px;
+    }
+    .right-column {
+        padding-left: 0;
     }
 }
